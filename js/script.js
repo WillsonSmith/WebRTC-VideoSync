@@ -1,6 +1,6 @@
 (function(){
 
-	var peer = new Peer({key: ''}),//your peerjs key
+	var peer = new Peer({key: 'peer = new Peer({key: ''}),'}),//your peerjs key
 		conn,
 		connected = false;
 
