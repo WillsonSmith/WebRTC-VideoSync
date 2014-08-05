@@ -1,6 +1,6 @@
 (function(){
 
-	function Connect(method, location) {
+	function HttpConnect(method, location) {
 
 		var request = new XMLHttpRequest(),
 		response;
@@ -22,7 +22,7 @@
 
 	}
 
-	var keyConnect = JSON.parse(new Connect('GET', 'js/key.js').respond()).key;
+	var keyConnect = JSON.parse(new HttpConnect('GET', 'js/key.js').respond()).key;
 
 	var peer = new Peer({key: keyConnect}),//your peerjs key
 		conn,
