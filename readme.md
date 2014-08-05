@@ -13,3 +13,7 @@ your PeerJSkey to `peer = new Peer({key: ''}),`. This will allow you to connect 
 PeerJS as your signaling server to connect the two machines. From there you just open
 your browser (may requre a local server) and either share your pin, or have someone share their
 pin to get started.
+
+
+At the moment the key is pulled in via a `key.js` file in the `js` directory. Create one with the following
+json structure: `{"key": "yourkeyhere"}`
