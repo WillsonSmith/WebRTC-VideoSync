@@ -1,6 +1,30 @@
 (function(){
 
-	var peer = new Peer({key: 'peer = new Peer({key: ''}),'}),//your peerjs key
+	function Connect(method, location) {
+
+		var request = new XMLHttpRequest(),
+		response;
+
+		request.open(method, location, false);
+		request.send();
+
+		if (request.status === 200) {
+
+			response = request.responseText;
+
+		}
+
+		this.respond = function() {
+
+			return response;
+
+		};
+
+	}
+
+	var keyConnect = JSON.parse(new Connect('GET', 'js/key.js').respond()).key;
+
+	var peer = new Peer({key: keyConnect}),//your peerjs key
 		conn,
 		connected = false;
 
@@ -108,7 +132,7 @@
 
 	peer.on('connection', function(conn){
 
-		//console.log('connected ', conn);
+		console.log('connected ', conn);
 		connect(conn.peer);
 
 		conn.on('data', function(data){
